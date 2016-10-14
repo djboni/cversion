@@ -52,7 +52,8 @@ VersionABCD=$(( $VersionD + $VersionABCD ))
 VersionABCD_file=`cat "$VERSION"`
 
 # Check if new version is bigger than the old version
-if [[ $VersionABCD_file -ge $VersionABCD ]] && [[ -z $Force ]]; then
+if [ $VersionABCD_file -ge $VersionABCD ] && [ -z $Force ]
+then
   echo "New version is not bigger than the old version"
   echo "Use -f as first argument to do it anyway"
   print_version "New:" $VersionABCD
