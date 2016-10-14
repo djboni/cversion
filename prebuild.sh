@@ -34,7 +34,7 @@ VersionC_val=$(($Version_val / 256 % 256))
 VersionD_val=$(($Version_val % 256))
 
 # Print
-print_version "Version:" $Version_val
+echo_version "Version:" $Version_val
 echo "Build:   $Build_val"
 echo "Head:    $Head_val"
 

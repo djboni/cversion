@@ -44,13 +44,13 @@ if [ $VersionABCD_file -ge $VersionABCD ] && [ -z $Force ]
 then
   echo "New version is not bigger than the old version"
   echo "Use -f as first argument to do it anyway"
-  print_version "New:" $VersionABCD
-  print_version "Old:" $VersionABCD_file
+  echo_version "New:" $VersionABCD
+  echo_version "Old:" $VersionABCD_file
   exit 2
 fi
 
 # Print version to terminal
-print_version "Version:" $VersionABCD
+echo_version "Version:" $VersionABCD
 
 # Write to version file
 echo "$VersionABCD" > "$VERSION"

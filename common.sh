@@ -18,7 +18,7 @@ HEAD=../info/apphead.val
 BUILD=../info/appbuild.val
 VERSION=../info/appversion.val
 
-print_version() {
+echo_version() {
   Pre="$1"
   Ver="$2"
   VerA=$(($Ver / 16777216 % 256))
