@@ -37,7 +37,7 @@ VersionABCD=$(( $VersionC * 256 + $VersionABCD ))
 VersionABCD=$(( $VersionD + $VersionABCD ))
 
 # File version
-VersionABCD_file=`cat "$VERSION"`
+VersionABCD_file=`cat "$APPVERSION"`
 
 # Check if new version is bigger than the old version
 if [ $VersionABCD_file -ge $VersionABCD ] && [ -z $Force ]
@@ -53,6 +53,6 @@ fi
 echo_version "Version:" $VersionABCD
 
 # Write to version file
-echo "$VersionABCD" > "$VERSION"
+echo "$VersionABCD" > "$APPVERSION"
 
 exit 0

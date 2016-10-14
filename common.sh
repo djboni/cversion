@@ -14,9 +14,9 @@
 # limitations under the License.
 set -e
 
-HEAD=../info/apphead.val
-BUILD=../info/appbuild.val
-VERSION=../info/appversion.val
+APPHEAD=../info/apphead.val
+APPBUILD=../info/appbuild.val
+APPVERSION=../info/appversion.val
 
 echo_version() {
   Pre="$1"

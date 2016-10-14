@@ -18,16 +18,16 @@ git='/usr/bin/git'
 ls "$git" >/dev/null 2>&1 || git='C:/Program Files/Git/cmd/git.exe'
 
 # Head
-Head_val=`"$git" rev-parse HEAD`
-echo "\"$Head_val\"" > "$HEAD"
+APPHEAD_val=`"$git" rev-parse HEAD`
+echo "\"$APPHEAD_val\"" > "$APPHEAD"
 
 # Build
-Build_val=`cat "$BUILD"`
+Build_val=`cat "$APPBUILD"`
 Build_val=$(($Build_val + 1))
-echo $Build_val > "$BUILD"
+echo $Build_val > "$APPBUILD"
 
 # Version
-Version_val=`cat "$VERSION"`
+Version_val=`cat "$APPVERSION"`
 VersionA_val=$(($Version_val / 16777216 % 256))
 VersionB_val=$(($Version_val / 65536 % 256))
 VersionC_val=$(($Version_val / 256 % 256))
@@ -36,6 +36,6 @@ VersionD_val=$(($Version_val % 256))
 # Print
 echo_version "Version:" $Version_val
 echo "Build:   $Build_val"
-echo "Head:    $Head_val"
+echo "HEAD:    $APPHEAD_val"
 
 exit 0
