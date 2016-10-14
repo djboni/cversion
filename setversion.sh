@@ -12,9 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-set -e
-
-VERSION=../info/appversion.val
+. ./common.sh
 
 case "$1" in 
   "-f") Force=1; shift ;;
@@ -27,16 +25,6 @@ case $VersionParam in
     echo "Usage: setversion.sh [-f] MAJOR MINOR REVISION"
     exit 1 ;;
 esac
-
-print_version() {
-  Pre="$1"
-  Ver="$2"
-  VerA=$(($Ver / 16777216 % 256))
-  VerB=$(($Ver / 65536 % 256))
-  VerC=$(($Ver / 256 % 256))
-  VerD=$(($Ver % 256))
-  echo "$Pre $VerA.$VerB.$VerC.$VerD ($Ver)"
-}
 
 # Argument version
 VersionA="$1"
