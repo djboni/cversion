@@ -16,6 +16,7 @@ set -e
 
 APPHEAD=../info/apphead.val
 APPBUILD=../info/appbuild.val
+APPBUILDTIME=../info/appbuildtime.val
 APPVERSION=../info/appversion.val
 
 EXEGIT='/usr/bin/git'

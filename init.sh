@@ -24,6 +24,11 @@ then
   echo 0 > "$APPBUILD"
 fi
 
+if [ ! -f "$APPBUILDTIME" ]
+then
+  echo "\"\"" > "$APPBUILDTIME"
+fi
+
 if [ ! -f "$APPVERSION" ]
 then
   echo 0 > "$APPVERSION"

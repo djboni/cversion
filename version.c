@@ -27,6 +27,10 @@ PROGMEM const uint32_t APP_BUILD =
 #include "info/appbuild.val"
 ;
 
+PROGMEM const char APP_BUILD_TIME[20U] =
+#include "info/appbuildtime.val"
+;
+
 PROGMEM const char APP_HEAD[41U] =
 #include "info/apphead.val"
 ;

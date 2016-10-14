@@ -22,6 +22,7 @@
 
 PROGMEM extern const uint32_t APP_VERSION;
 PROGMEM extern const uint32_t APP_BUILD;
+PROGMEM extern const char APP_BUILD_TIME[20U];
 PROGMEM extern const char APP_HEAD[41U];
 
 #endif /* VERSION_H_ */
