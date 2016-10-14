@@ -18,6 +18,9 @@ APPHEAD=../info/apphead.val
 APPBUILD=../info/appbuild.val
 APPVERSION=../info/appversion.val
 
+EXEGIT='/usr/bin/git'
+ls "$EXEGIT" >/dev/null 2>&1 || EXEGIT='C:/Program Files/Git/cmd/git.exe'
+
 echo_version() {
   Pre="$1"
   Ver="$2"

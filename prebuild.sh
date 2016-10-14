@@ -14,11 +14,8 @@
 # limitations under the License.
 . ./common.sh
 
-git='/usr/bin/git'
-ls "$git" >/dev/null 2>&1 || git='C:/Program Files/Git/cmd/git.exe'
-
 # Head
-APPHEAD_val=`"$git" rev-parse HEAD`
+APPHEAD_val=`"$EXEGIT" rev-parse HEAD`
 echo "\"$APPHEAD_val\"" > "$APPHEAD"
 
 # Build
