@@ -14,10 +14,10 @@
 # limitations under the License.
 set -e
 
-APPHEAD=../info/apphead.val
-APPBUILD=../info/appbuild.val
-APPBUILDTIME=../info/appbuildtime.val
-APPVERSION=../info/appversion.val
+APPHEAD=info/apphead.val
+APPBUILD=info/appbuild.val
+APPBUILDTIME=info/appbuildtime.val
+APPVERSION=info/appversion.val
 
 EXEGIT='/usr/bin/git'
 ls "$EXEGIT" >/dev/null 2>&1 || EXEGIT='C:/Program Files/Git/cmd/git.exe'

@@ -14,6 +14,9 @@
 # limitations under the License.
 . ./common.sh
 
+# Change directory
+cd "$1"; shift; pwd
+
 if [ ! -f "$APPHEAD" ]
 then
   echo "\"\"" > "$APPHEAD"
