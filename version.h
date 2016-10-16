@@ -20,9 +20,17 @@
 #include <stdint.h>
 #include <avr/pgmspace.h>
 
-PROGMEM extern const uint32_t APP_VERSION;
-PROGMEM extern const uint32_t APP_BUILD;
-PROGMEM extern const char APP_BUILD_TIME[20U];
-PROGMEM extern const char APP_HEAD[41U];
+struct cversion_t {
+    char name[20U];
+    uint32_t version;
+    uint32_t build;
+    char datetime[20U];
+    char head[41U];
+};
+
+#define CVERSION_DECLARE(name) \
+    extern const struct cversion_t name
+
+PROGMEM CVERSION_DECLARE(APPNAME);
 
 #endif /* VERSION_H_ */

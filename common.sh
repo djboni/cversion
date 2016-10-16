@@ -20,6 +20,7 @@ then
 
   CVERSION_CommonExecuted=1
 
+  APPNAME=info/appname.val
   APPHEADPATH=info/appheadpath.val
   APPHEAD=info/apphead.val
   APPBUILD=info/appbuild.val

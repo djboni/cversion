@@ -15,22 +15,25 @@
  */
 
 #include "version.h"
+#include <avr/pgmspace.h>
 
-PROGMEM const uint32_t APP_VERSION =
-#include "info/appversion.val"
-#ifdef DEBUG
-| (uint32_t)(DEBUG == 0 ? 255 : DEBUG)
+#ifndef APPNAME
+#define APPNAME "APP"
+#warning APPNAME is not defined!
 #endif
-;
+#define STR(x) #x
 
-PROGMEM const uint32_t APP_BUILD =
-#include "info/appbuild.val"
-;
-
-PROGMEM const char APP_BUILD_TIME[20U] =
-#include "info/appbuildtime.val"
-;
-
-PROGMEM const char APP_HEAD[41U] =
-#include "info/apphead.val"
-;
+PROGMEM const struct cversion_t APPNAME = {
+        #include "info/appname.val"
+        ,
+        #include "info/appversion.val"
+        #ifdef DEBUG
+        | (uint32_t)(DEBUG == 0 ? 255 : DEBUG)
+        #endif
+        ,
+        #include "info/appbuild.val"
+        ,
+        #include "info/appbuildtime.val"
+        ,
+        #include "info/apphead.val"
+};
