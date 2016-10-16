@@ -12,23 +12,42 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-set -e
 
-APPHEAD=info/apphead.val
-APPBUILD=info/appbuild.val
-APPBUILDTIME=info/appbuildtime.val
-APPVERSION=info/appversion.val
+if [ -z $CVERSION_CommonExecuted ]
+then
 
-EXEGIT='/usr/bin/git'
-ls "$EXEGIT" >/dev/null 2>&1 || EXEGIT='C:/Program Files/Git/cmd/git.exe'
+  set -e
 
-echo_version() {
-  Pre="$1"
-  Ver="$2"
-  VerA=$(($Ver / 16777216 % 256))
-  VerB=$(($Ver / 65536 % 256))
-  VerC=$(($Ver / 256 % 256))
-  VerD=$(($Ver % 256))
-  echo "$Pre $VerA.$VerB.$VerC.$VerD ($Ver)"
-}
+  CVERSION_CommonExecuted=1
 
+  APPHEAD=info/apphead.val
+  APPBUILD=info/appbuild.val
+  APPBUILDTIME=info/appbuildtime.val
+  APPVERSION=info/appversion.val
+
+  EXEGIT='/usr/bin/git'
+  ls "$EXEGIT" >/dev/null 2>&1 || EXEGIT='C:/Program Files/Git/cmd/git.exe'
+
+  echo_version() {
+    Pre="$1"
+    Ver="$2"
+    VerA=$(($Ver / 16777216 % 256))
+    VerB=$(($Ver / 65536 % 256))
+    VerC=$(($Ver / 256 % 256))
+    VerD=$(($Ver % 256))
+    echo "$Pre $VerA.$VerB.$VerC.$VerD ($Ver)"
+  }
+
+  ExecPath=`pwd`
+  cd "$1"; shift
+  ProjPath=`pwd`
+
+  do_EnterExecPath() {
+    cd "$ExecPath"
+  }
+
+  do_EnterProjPath() {
+    cd "$ProjPath"
+  }
+
+fi

@@ -14,9 +14,6 @@
 # limitations under the License.
 . ./common.sh
 
-# Change directory
-cd "$1"; shift; pwd
-
 if [ ! -f "$APPHEAD" ]
 then
   echo "\"\"" > "$APPHEAD"
@@ -35,5 +32,8 @@ fi
 if [ ! -f "$APPVERSION" ]
 then
   echo 0 > "$APPVERSION"
-  sh ./setversion.sh 0 1 0
+
+  do_EnterExecPath
+    sh ./setversion.sh "$ProjPath" 0 1 0
+  do_EnterProjPath
 fi

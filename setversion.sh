@@ -14,7 +14,7 @@
 # limitations under the License.
 . ./common.sh
 
-case "$1" in 
+case "$1" in
   "-f") Force=1; shift ;;
 esac
 

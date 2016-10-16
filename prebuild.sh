@@ -14,9 +14,6 @@
 # limitations under the License.
 . ./common.sh
 
-# Change directory
-cd "$1"; shift; pwd
-
 # Head
 APPHEAD_val=`"$EXEGIT" rev-parse HEAD`
 echo "\"$APPHEAD_val\"" > "$APPHEAD"
