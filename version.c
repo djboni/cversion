@@ -17,12 +17,6 @@
 #include "version.h"
 #include <avr/pgmspace.h>
 
-#ifndef APPNAME
-#define APPNAME "APP"
-#warning APPNAME is not defined!
-#endif
-#define STR(x) #x
-
 PROGMEM const struct cversion_t APPNAME = {
         #include "info/appname.val"
         ,

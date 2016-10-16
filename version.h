@@ -18,7 +18,6 @@
 #define VERSION_H_
 
 #include <stdint.h>
-#include <avr/pgmspace.h>
 
 struct cversion_t {
     char name[20U];
@@ -28,9 +27,12 @@ struct cversion_t {
     char head[41U];
 };
 
-#define CVERSION_DECLARE(name) \
-    extern const struct cversion_t name
+#define CVERSION_DECLARE(name) extern const struct cversion_t name
 
-PROGMEM CVERSION_DECLARE(APPNAME);
+#ifndef APPNAME
+#define APPNAME App
+#endif
+
+CVERSION_DECLARE(APPNAME);
 
 #endif /* VERSION_H_ */
