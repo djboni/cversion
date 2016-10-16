@@ -15,7 +15,9 @@
 . ./common.sh
 
 # Head
-APPHEAD_val=`"$EXEGIT" rev-parse HEAD`
+do_EnterHeadPath
+  APPHEAD_val=`"$EXEGIT" rev-parse HEAD`
+do_EnterProjPath
 echo "\"$APPHEAD_val\"" > "$APPHEAD"
 
 # Build

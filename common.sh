@@ -20,6 +20,7 @@ then
 
   CVERSION_CommonExecuted=1
 
+  APPHEADPATH=info/appheadpath.val
   APPHEAD=info/apphead.val
   APPBUILD=info/appbuild.val
   APPBUILDTIME=info/appbuildtime.val
@@ -42,12 +43,21 @@ then
   cd "$1"; shift
   ProjPath=`pwd`
 
+  if [ -f "$APPHEADPATH" ]
+  then
+    APPHEADPATH_EXISTS=1
+  fi
+
   do_EnterExecPath() {
     cd "$ExecPath"
   }
 
   do_EnterProjPath() {
     cd "$ProjPath"
+  }
+
+  do_EnterHeadPath() {
+    cd `cat "$APPHEADPATH"`
   }
 
 fi

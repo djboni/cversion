@@ -14,6 +14,11 @@
 # limitations under the License.
 . ./common.sh
 
+if [ -z "$APPHEADPATH_EXISTS" ]
+then
+  echo "." > "$APPHEADPATH"
+fi
+
 if [ ! -f "$APPHEAD" ]
 then
   echo "\"\"" > "$APPHEAD"
