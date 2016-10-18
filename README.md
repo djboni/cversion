@@ -75,7 +75,8 @@ from.
 * `./prebuild.sh ..`
 10. Configure IDE to run the pre-build scrit before compiling. This is the
 command that works for me (... project root directory)
-* `cd ../version && ./prebuild.sh ..`
+* Linux `cd ../version && ./prebuild.sh ..`
+* Windows `"C:\Program Files\Git\bin\bash.exe" -c "cd ../version && ./prebuild.sh .."`
 
 Now every time you build the build counter is incremented, the build time is
 updated and the head commit is also updated.
