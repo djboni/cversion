@@ -19,6 +19,10 @@
 
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 struct cversion_t {
     char name[20U];
     uint32_t version;
@@ -34,5 +38,9 @@ struct cversion_t {
 #endif
 
 CVERSION_DECLARE(APPNAME);
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
 
 #endif /* VERSION_H_ */
