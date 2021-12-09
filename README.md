@@ -1,6 +1,12 @@
+# ARCHIVED
+
+The project [Build Info](https://github.com/djboni/build_info) superseeds
+CVersion.
+
+
 # [CVersion](https://github.com/djboni/cversion)
 
-by [Djones A. Boni](https://twitter.com/djonesboni)
+by Djones A. Boni
 
 
 CVersion is a small library that helps you to keep track of your C/C++ projects
@@ -10,12 +16,10 @@ datetime.
 
 You can use CVersion both for closed- and open-source projects. You are also
 free to keep changes to this library to yourself. However we'll enjoy your
-improvements and suggestions. `:-)`
+improvements and suggestions.
 
 You are free to copy, modify, and distribute CVersion with attribution under
-the terms of the
-[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-See the doc/LICENSE file for details.
+the terms of the MIT License. See the LICENSE.txt file for details.
 
 
 ## Supported hardware
@@ -137,16 +141,10 @@ int main(void)
 
 ```
 
-## Contributing to CVersion
-
-If you have suggestions for improving CVersion, please
-[open an issue or pull request on GitHub](https://github.com/djboni/cversion).
-
-
 ## Important files
 
 [README.md](https://github.com/djboni/cversion/blob/master/README.md)
 Fast introduction (this file).
 
-[doc/LICENCE](https://github.com/djboni/cversion/blob/master/doc/LICENSE)
+[LICENCE.txt](https://github.com/djboni/cversion/blob/master/LICENCE.txt)
 Complete license text.
